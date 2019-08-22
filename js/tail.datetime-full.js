@@ -606,8 +606,8 @@
                 x = parseInt(b.marginLeft)+parseInt(b.marginRight),
                 y = parseInt(b.marginTop) +parseInt(b.marginBottom),
                 p = {
-                    top:    this.e.getBoundingClientRect().top  + w.scrollY,
-                    left:   this.e.getBoundingClientRect().left - w.scrollX,
+                    top:    this.e.getBoundingClientRect().top  + (w.scrollY !== undefined ? w.scrollY : w.pageYOffset),
+                    left:   this.e.getBoundingClientRect().left - (w.scrollX !== undefined ? w.scrollX : w.pageXOffset),
                     width:  this.e.offsetWidth  || 0,
                     height: this.e.offsetHeight || 0
                 };
